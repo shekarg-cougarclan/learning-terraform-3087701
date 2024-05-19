@@ -51,8 +51,8 @@ module "alb" {
 
   name    = "my-alb"
   vpc_id  = module.blog.vpc.vpc_id
-  subnet_id = module.blog_vpc.public_subnets[0]
-  vpc_security_group_ids  = [module.blog_sg.security_group_id]
+  subnets  = module.blog_vpc.public_subnets
+  security_groups = module.blog_sg.security_group_id
 
 
   listeners = {
